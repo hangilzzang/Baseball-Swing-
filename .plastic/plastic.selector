@@ -1,0 +1,4 @@
+repository "Baseball Swing!@hangilkim@cloud"
+  path "/"
+    br "/main"
+    co "/main"
