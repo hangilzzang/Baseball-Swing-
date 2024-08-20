@@ -13,6 +13,19 @@ public class TouchToStartUI : MonoBehaviour
     public GameObject help;
     public GameObject infoUI;
 
+    void Awake()
+    {
+        if (!GameManager.instance.noAds)
+            {
+            IntersitialAdStart.instance.ShowAd();
+
+            if (GameManager.instance.gamePlayedTimes > 0)
+            {
+                IntersitialAdOver.instance.ShowAd();
+            }
+        }
+    }
+    
     void Start()
     {
         GameManager.instance.gameState = GameManager.GameState.GameStart;
@@ -41,6 +54,7 @@ public class TouchToStartUI : MonoBehaviour
             {
                 RewardADAluminum.instance.LoadAd();
                 RewardADParachute.instance.LoadAd();
+                IntersitialAdOver.instance.LoadAd();
             }
 
             TouchToStartAudio.volume = GameManager.instance.TouchToStartVolume;

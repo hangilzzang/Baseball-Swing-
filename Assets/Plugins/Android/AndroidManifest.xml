@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.unity3d.player"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.baseballswing.gilgames"
+    xmlns:tools="http://schemas.android.com/tools"> <!-- 패키지 수정함 -->
 
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />   <!-- 권한추가 -->
     <uses-permission android:name="android.permission.INTERNET" />  <!-- 권한추가 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 권한추가 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="remove"/>
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
 
     <application>
-
-        <!-- 수정
-        <meta-data 
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5296572742029352~3357345676" /> -->
-
-
 
         <activity android:name="com.unity3d.player.UnityPlayerActivity"
                   android:theme="@style/UnityThemeSelector">
@@ -26,10 +22,6 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>
 
-        <!-- 수정 -->
-        <!-- <activity android:name="com.google.android.gms.ads.AdActivity"
-                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
-                  android:theme="@android:style/Theme.Translucent" /> -->
     
     </application>
 </manifest>

@@ -301,7 +301,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.375
+  - time: 4.5
     functionName: GoGameScene
     data: 
     objectReferenceParameter: {fileID: 0}

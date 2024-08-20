@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GoogleMobileAds.Api;
 using System;
+using GoogleMobileAds.Api;
 
 
-public class RewardADAluminum : MonoBehaviour
+public class IntersitialAdStart : MonoBehaviour
 {
 #if UNITY_ANDROID
-        private const string _adUnitId = "ca-app-pub-5296572742029352/8886644578";
+        private const string _adUnitId = "ca-app-pub-5296572742029352/3335940580";
 #elif UNITY_IPHONE
-        private const string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
+        private const string _adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
         private const string _adUnitId = "unused";
 #endif
 
-    public static RewardADAluminum instance;
-    public RewardedAd _rewardedAd;
+    public static IntersitialAdStart instance;
+    public InterstitialAd _interstitialAd;
 
     void Awake()
     {
@@ -34,40 +34,33 @@ public class RewardADAluminum : MonoBehaviour
 
         public void LoadAd()
         {
-            if (_rewardedAd != null)
+            if (_interstitialAd != null)
             {
                 return;
             }
+
             var adRequest = new AdRequest();
 
-            RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+            InterstitialAd.Load(_adUnitId, adRequest, (InterstitialAd ad, LoadAdError error) =>
             {
                 if (error != null)
                 {
                     return;
                 }
-
                 if (ad == null)
                 {
                     return;
                 }
-
-                // Debug.Log("Rewarded ad loaded with response");
-                _rewardedAd = ad;
-
+                
+                _interstitialAd = ad;
             });
         }
 
-
         public void ShowAd()
         {
-            if (_rewardedAd != null && _rewardedAd.CanShowAd())
+            if (_interstitialAd != null && _interstitialAd.CanShowAd())
             {
-                _rewardedAd.Show((Reward reward) => 
-                {
-                   EventManager.instance.TriggerWatchedRewardAd("bat");
-                });
-
+                _interstitialAd.Show();
             }
         }
 }

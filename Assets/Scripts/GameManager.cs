@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
     public bool ballADClicked = false;
     public bool noAds = false;
 
+    public int IntersitialAdIndex = 10; // 겜끝나고 전면광고 노출 확률 조절 10은 10분의1
+
     void Awake() 
     {
         // PlayerPrefs.DeleteAll();

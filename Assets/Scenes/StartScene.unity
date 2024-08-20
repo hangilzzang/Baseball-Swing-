@@ -177,13 +177,15 @@ GameObject:
   - component: {fileID: 1393718832}
   - component: {fileID: 1393718834}
   - component: {fileID: 1393718833}
+  - component: {fileID: 1393718835}
+  - component: {fileID: 1393718836}
   m_Layer: 0
   m_Name: AdManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1393718832
 Transform:
   m_ObjectHideFlags: 0
@@ -221,6 +223,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f8fe5bf23086364090ca20624922e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1393718835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393718831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9788e8c21595344b158ef94b89017c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1393718836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393718831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bddb0895e63c5e4591c5723c9fad576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1562975858
@@ -290,6 +316,7 @@ MonoBehaviour:
   batADClicked: 0
   ballADClicked: 0
   noAds: 0
+  IntersitialAdIndex: 10
 --- !u!1 &1743927995
 GameObject:
   m_ObjectHideFlags: 0

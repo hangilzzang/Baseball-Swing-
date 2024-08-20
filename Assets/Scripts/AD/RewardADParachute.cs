@@ -35,7 +35,7 @@ public class RewardADParachute : MonoBehaviour
         {
             if (_rewardedAd != null)
             {
-                DestroyAd();
+                return;
             }
             var adRequest = new AdRequest();
 
@@ -55,14 +55,7 @@ public class RewardADParachute : MonoBehaviour
 
             });
         }
-        public void DestroyAd()
-        {
-            if (_rewardedAd != null)
-            {
-                _rewardedAd.Destroy();
-                _rewardedAd = null;
-            }
-        }
+
 
         public void ShowAd()
         {
