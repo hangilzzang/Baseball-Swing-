@@ -67,5 +67,7 @@ public class RewardADParachute : MonoBehaviour
                 });
 
             }
+            
+            _rewardedAd = null;
         }
 }

@@ -61,6 +61,7 @@ public class IntersitialAdStart : MonoBehaviour
             if (_interstitialAd != null && _interstitialAd.CanShowAd())
             {
                 _interstitialAd.Show();
+                _interstitialAd = null;
             }
         }
 }

@@ -16,14 +16,14 @@ public class TouchToStartUI : MonoBehaviour
     void Awake()
     {
         if (!GameManager.instance.noAds)
+            if (GameManager.instance.gamePlayedTimes == 0)
             {
-            IntersitialAdStart.instance.ShowAd();
-
-            if (GameManager.instance.gamePlayedTimes > 0)
+                IntersitialAdStart.instance.ShowAd();
+            }    
+            else
             {
                 IntersitialAdOver.instance.ShowAd();
             }
-        }
     }
     
     void Start()
@@ -64,15 +64,16 @@ public class TouchToStartUI : MonoBehaviour
             uiComponent.SetAlpha(0f);
             
 
-            GameManager.instance.gamePlayedTimes += 1;
             // 도움말 UI 추가
-            if (GameManager.instance.gamePlayedTimes == 1)
+            if (GameManager.instance.gamePlayedTimes == 0)
             {
                 help.SetActive(true);
             }
 
             GameManager.instance.gameState = GameManager.GameState.PowerGauge; // 게임상태 변경
             PowerGauge.SetActive(true);
+            
+            GameManager.instance.gamePlayedTimes += 1;
         }
 
         else if (GameManager.instance.gameState == GameManager.GameState.InfoUI)
@@ -80,5 +81,6 @@ public class TouchToStartUI : MonoBehaviour
             GameManager.instance.gameState = GameManager.GameState.GameStart;
             infoUI.SetActive(false);
         }
+            
     }
 }

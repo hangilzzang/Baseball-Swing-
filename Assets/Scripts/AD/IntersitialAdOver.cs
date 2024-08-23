@@ -62,6 +62,8 @@ public class IntersitialAdOver : MonoBehaviour
             if (_interstitialAd != null && _interstitialAd.CanShowAd() && randomNumber == 0)
             {
                 _interstitialAd.Show();
+                
+                _interstitialAd = null;
             }
         }
 
