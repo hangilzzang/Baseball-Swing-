@@ -12,6 +12,7 @@ public class TouchToStartUI : MonoBehaviour
     public GameObject RewardADUI;
     public GameObject help;
     public GameObject infoUI;
+    public GameObject leaderBoardUI;
 
     void Awake()
     {
@@ -61,6 +62,7 @@ public class TouchToStartUI : MonoBehaviour
             TouchToStartAudio.Play();
             
             RewardADUI.SetActive(false); // UI비활성화
+            leaderBoardUI.SetActive(false); // 리더보드UI비활성화
             uiComponent.SetAlpha(0f);
             
 

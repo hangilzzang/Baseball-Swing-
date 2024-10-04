@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames.BasicApi;
+using JetBrains.Annotations;
 
 
 public class GameManager : MonoBehaviour 
@@ -145,6 +149,24 @@ public class GameManager : MonoBehaviour
         if (scoreValue > bestScore)
         {
             PlayerPrefs.SetInt("BestScore", scoreValue);
+            PlayGamesPlatform.Instance.Authenticate( // 자동로그인 수신 결과 대기   
+            (SignInStatus status) =>
+            {
+                if (status == SignInStatus.Success) 
+                {
+                    Social.ReportScore(12345, "CgkI8vee2q8NEAIQAQ", (bool success) => 
+                    {
+                        if (success)
+                        {
+                            Debug.Log("점수개시 성공");
+                        }
+                        else
+                        {
+                            Debug.Log("점수개시 실패함");
+                        }
+                    });
+                }
+            });
             newRecord = true;
         }
     }

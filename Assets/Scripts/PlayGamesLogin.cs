@@ -35,6 +35,10 @@ public class PlayGamesLogin : MonoBehaviour
             // string imgUrl = PlayGamesPlatform.Instance.GetUserImageUrl(); // 사용자 프로필 이미지 URL
             Debug.Log("Login Successful");
         }
+        else 
+        {
+            Debug.Log("Login Failed");
+        }
     }
 
     // Update is called once per frame
