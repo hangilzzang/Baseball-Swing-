@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
             {
                 if (status == SignInStatus.Success) 
                 {
-                    Social.ReportScore(12345, "CgkI8vee2q8NEAIQAQ", (bool success) => 
+                    Social.ReportScore(scoreValue, "CgkI8vee2q8NEAIQAQ", (bool success) => 
                     {
                         if (success)
                         {
