@@ -102,6 +102,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        PlayGamesPlatform.Activate();
+        PlayGamesPlatform.DebugLogEnabled = true;
         // 광고 없는 버전임을 확인
         if (RewardADAluminum.instance == null && RewardADParachute.instance == null)
         {
@@ -149,22 +151,12 @@ public class GameManager : MonoBehaviour
         if (scoreValue > bestScore)
         {
             PlayerPrefs.SetInt("BestScore", scoreValue);
-            PlayGamesPlatform.Instance.Authenticate( // 자동로그인 수신 결과 대기   
-            (SignInStatus status) =>
+            Social.localUser.Authenticate(
+            (bool success) =>
             {
-                if (status == SignInStatus.Success) 
+                if (success) 
                 {
-                    Social.ReportScore(scoreValue, "CgkI8vee2q8NEAIQAQ", (bool success) => 
-                    {
-                        if (success)
-                        {
-                            Debug.Log("점수개시 성공");
-                        }
-                        else
-                        {
-                            Debug.Log("점수개시 실패함");
-                        }
-                    });
+                    Social.ReportScore(scoreValue, "CgkI8vee2q8NEAIQAQ", (bool success) => {});
                 }
             });
             newRecord = true;

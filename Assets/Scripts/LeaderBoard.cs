@@ -45,5 +45,6 @@ public class LeaderBoard : MonoBehaviour
     public void HandleButtonClick()
     {
         PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI8vee2q8NEAIQAQ"); // 점수 리더보드임
+        
     }
 }
