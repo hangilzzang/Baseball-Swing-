@@ -18,7 +18,7 @@ public class TouchToStartUI : MonoBehaviour
         if (!GameManager.instance.noAds)
             if (GameManager.instance.gamePlayedTimes == 0)
             {
-                IntersitialAdStart.instance.ShowAd();
+                // IntersitialAdStart.instance.ShowAd();
             }    
             else
             {

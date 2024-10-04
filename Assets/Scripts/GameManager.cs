@@ -1,8 +1,10 @@
-using System;
+ using System;
 using GoogleMobileAds.Api;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 
 public class GameManager : MonoBehaviour 
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
         // PlayerPrefs.DeleteAll();
         // PlayerPrefs.Save(); // 변경사항 저장
-        Application.targetFrameRate = 60; // fps 60으로 설정
+        Application.targetFrameRate = 120; // fps 60으로 설정
 
 
         if (instance == null)
